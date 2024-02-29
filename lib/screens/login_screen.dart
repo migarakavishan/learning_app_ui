@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:learning_app_ui/screens/my_classes.dart';
 
 import '../components/custom_button.dart';
 
@@ -106,8 +107,23 @@ class LoginScreen extends StatelessWidget {
               CustomButton(
                 size: size,
                 text: "Login with your account",
-                ontap: () {},
-              )
+                ontap: () {
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const MyClasses()));
+                },
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              RichText(
+                  text: const TextSpan(
+                      text: "Don't have an Account ?",
+                      style: TextStyle(color: Colors.purple, fontSize: 12),
+                      children: [
+                    TextSpan(
+                        text: " Create Account",
+                        style: TextStyle(
+                            color: Colors.blue, fontWeight: FontWeight.bold))
+                  ]))
             ],
           ),
         ),
